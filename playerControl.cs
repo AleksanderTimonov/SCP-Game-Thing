@@ -9,47 +9,47 @@ public class playerControl : MonoBehaviour
     [SerializeField]
     Vector3 verticalMovement;
     [SerializeField]
-    KeyCode upArrow;
+    KeyCode upKey;
     [SerializeField]
-    KeyCode downArrow;
+    KeyCode downKey;
     [SerializeField]
-    KeyCode leftArrow;
+    KeyCode leftKey;
     [SerializeField]
-    KeyCode rightArrow;
+    KeyCode rightKey;
 
     public void Start()
     {
         verticalMovement.y = 0.1f;
         horizontalMovement.x = 0.1f;
-        upArrow = KeyCode.UpArrow;
-        downArrow = KeyCode.DownArrow;
-        leftArrow = KeyCode.LeftArrow;
-        rightArrow = KeyCode.RightArrow;
+        upKey = KeyCode.W;
+        downKey = KeyCode.S;
+        leftKey = KeyCode.A;
+        rightKey = KeyCode.D;
     }
 
     void FixedUpdate()
     {
 
         
-        if (Input.GetKey(upArrow)) // NORTH
+        if (Input.GetKey(upKey)) // NORTH
         {
             GetComponent<Transform>().position += new Vector3(0, verticalMovement.y, 0);
 
 
         }
-        if (Input.GetKey(downArrow)) //SOUTH
+        if (Input.GetKey(downKey)) //SOUTH
         {
             GetComponent<Transform>().position -= new Vector3(0, verticalMovement.y, 0);
 
         }
 
-        if (Input.GetKey(leftArrow)) // WEST
+        if (Input.GetKey(leftKey)) // WEST
         {
             GetComponent<Transform>().position -= new Vector3(horizontalMovement.x, 0, 0);
 
         }
 
-        if (Input.GetKey(rightArrow)) //EAST
+        if (Input.GetKey(rightKey)) //EAST
         {
             GetComponent<Transform>().position += new Vector3(horizontalMovement.x, 0, 0);
 
